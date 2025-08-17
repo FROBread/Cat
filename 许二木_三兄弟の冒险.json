@@ -1,0 +1,844 @@
+{
+    "title": "三兄弟の冒险",
+    "start_node": "intro",
+    "nodes": {
+        "intro": {
+            "text": "你身处一片混沌，你没有任何记忆（再次触发不说这句）。你觉得身体变得轻盈，在你面前有三道门：\nA. 暗红色的石门，上面刻有魑魅魍魉的浮雕\nB. 青绿色的木门，门虚掩着，你能看到里面有一条河流\nC. 带锁的金属门，上面刻着真理（门被锁上了没有钥匙进不来）",
+            "options": [
+                {
+                    "text": "选择暗红色的石门（地狱之门）",
+                    "next": "A1",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": "选择青绿色的木门（六道轮回）",
+                    "next": "B1",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": "尝试打开金属门（真理之门）",
+                    "next": "intro_locked",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "intro_locked": {
+            "text": "真理之门紧紧锁着，没有钥匙无法开启。你需要先在其他世界线中找到钥匙才能进入。",
+            "options": [
+                {
+                    "text": "返回选择其他门",
+                    "next": "intro",
+                    "backtrack_change": -1
+                }
+            ]
+        },
+        "A1": {
+            "text": "你推开暗红色的石门，来到地狱之门。你刚进门，就被门口的牛头怪物扣押了，他瞪着铜铃大的眼睛盯着你。你打算怎么做.....",
+            "options": [
+                {
+                    "text": " 干掉他",
+                    "next": "A1_1",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 顺从他",
+                    "next": "A2",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 偷东西",
+                    "next": "A1_3",
+                    "backtrack_change": -1
+                }
+            ]
+        },
+        "A1_1": {
+            "text": "虽然没打过牛头怪物，但他很欣赏你的个性。牛头瓮声瓮气地说：'有骨气！在这地府倒是少见！'",
+            "options": [
+                {
+                    "text": "继续前进",
+                    "next": "A2",
+                    "backtrack_change": 3
+                }
+            ]
+        },
+        "A1_3": {
+            "text": "由于被扣押着，只能用舌头偷东西，显而易见，你猥琐的动作很快就被发现了，牛头怪物胖揍了你一顿。",
+            "options": [
+                {
+                    "text": "被押往阎王殿",
+                    "next": "A2",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "A2": {
+            "text": "无事发生。你被带到阎王面前，阎王高高在上，威严的声音响彻大殿：'说吧，怎么死的？'你不记得，只能撒谎......",
+            "options": [
+                {
+                    "text": " 加班狗累到猝死",
+                    "next": "A3",
+                    "result":"阎王欣赏你的工作态度，决定留你在地府工作",
+                    "backtrack_change": 2
+                },
+                {
+                    "text": " 老子是见义勇为的大英雄",
+                    "next": "A2_1",
+                    "backtrack_change": -1
+                },
+                {
+                    "text": " 我不记得了",
+                    "next": "A3",
+                    "result":"你的诚实让阎王很欣赏，决定留你在地府工作",
+                    "backtrack_change": 1
+                }
+            ]
+        },
+        "A2_1": {
+            "text": "你的谎言很快就被识破了，阎王大怒，把你扔进了十八层地狱。你在十八层地狱受尽了三年苦难，直到有一次牛头路过，掉下来一块令牌。",
+            "options": [
+                {
+                    "text": " 捡起来还给他",
+                    "next": "A3",
+                    "result":"牛头很欣赏你，向阎王求了情",
+                    "backtrack_change": 1
+                },
+                {
+                    "text": " 偷偷藏起来",
+                    "next": "ending1",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 趁牛头发现之前使用",
+                    "next": "intro",
+                    "result":"你使用了令牌，居然回到了最开始的大门，但你永生永世受到牛肉的追杀",
+                    "backtrack_change": -2
+                }
+            ]
+        },
+        "A3": {
+            "text": "你成了马面，牛头开心极了工作时，阎王指向生死簿上的一个名字：'李半月'，你没看清全部，于是问阎王其名，阎王笑说：'需要一半，留下一半。'",
+            "options": [
+                {
+                    "text": " 把李雷带回来",
+                    "next": "A4",
+                    "result":"阎王觉得你很聪明",
+                    "backtrack_change": 3
+                },
+                {
+                    "text": " 把半月带回来",
+                    "next": "A4",
+                    "result":"阎王不明所以",
+                    "backtrack_change": -1
+                },
+                {
+                    "text": " 把牛头带回来",
+                    "next": "A4",
+                    "result":"牛头不明所以",
+                    "backtrack_change": -5
+                }
+            ]
+        },
+        "A4": {
+            "text": "你很快在地府工作了十年，阎王很信任你。有一次你在他的桌子上看到了你的生前信息：\n张婉儿，26岁死于病床。死因：脑死亡？死亡日期2138年秋\n后面还有阎王标注的：判断或许有误。\n你意识到事情没那么简单。",
+            "options": [
+                {
+                    "text": " 安定的过现在的生活",
+                    "next": "A4_1",
+                    "backtrack_change": 1
+                },
+                {
+                    "text": " 去阳间调查真相",
+                    "next": "A6",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 在地府调查真相",
+                    "next": "A5",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "A4_1": {
+            "text": "你安定的在地府工作，有一天牛头突然羞涩的邀请你一起吃晚饭。",
+            "options": [
+                {
+                    "text": "同意",
+                    "next": "ending3",
+                    "backtrack_change": 3
+                },
+                {
+                    "text": "拒绝",
+                    "next": "A4_1_2",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "A4_1_2": {
+            "text": "你知道牛头的心意，但你是个工作狂。十年后的一天，你发现了阎王贪污的证据。",
+            "options": [
+                {
+                    "text": " 告知阎王但选择保密",
+                    "next": "ending4",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 保持沉默替他保密",
+                    "next": "ending5",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 准备告发阎王",
+                    "next": "A4_1_2_3",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "A4_1_2_3": {
+            "text": "阎王得知后大怒，他派牛头来捉拿你，但地府里正直的诡很多，他们都很支持你。",
+            "options": [
+                {
+                    "text": " 让大家拖延时间，你去请地藏王",
+                    "next": "ending6",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 和大家一起谋反",
+                    "next": "ending7",
+                    "backtrack_change": -1
+                },
+                {
+                    "text": " 策反牛头",
+                    "next": "ending8",
+                    "backtrack_change": 1
+                }
+            ]
+        },
+        "A5": {
+            "text": "阎王在家寿辰，大家喝的酩酊大醉，你决定冒险去调查。",
+            "options": [
+                {
+                    "text": " 阎王的宝库",
+                    "next": "A4_1_2",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 牛头的家",
+                    "next": "ending3",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 阎王的办公室",
+                    "next": "A7",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "A6": {
+            "text": "你偷偷溜到阳间，发现了你的坟墓：张婉儿之墓。你挖开棺椁，里面有你的尸体，你漂亮的脸蛋儿带有一丝苍白，看起来很安详。",
+            "options": [
+                {
+                    "text": " 去其他地方转转",
+                    "next": "A5",
+                    "backtrack_change": -1
+                },
+                {
+                    "text": " 调查尸体",
+                    "next": "A9",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 解剖尸体",
+                    "next": "A5",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "A7": {
+            "text": "你悄悄溜进办公室差点没吓死，阎王居然在这。你刚要解释，却发现他闭着眼一动不动。",
+            "options": [
+                {
+                    "text": " 帮他检查身体",
+                    "next": "A8",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 搜索房间",
+                    "next": "A9",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 趁他没醒溜之大吉",
+                    "next": "ending9",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "A8": {
+            "text": "你发现面前的阎王居然是机器人，什么情况？",
+            "options": [
+                {
+                    "text": " 帮他检查身体",
+                    "next": "A9",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 搜索房间",
+                    "next": "A9",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "A9": {
+            "text": "你获得了一把奇怪的金属钥匙。有了钥匙，你想回到那三扇门前。",
+            "options": [
+                {
+                    "text": " 调查阎王",
+                    "next": "ending10",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 调查牛头",
+                    "next": "intro",
+                    "backtrack_change": -1
+                },
+                {
+                    "text": " 调查自己",
+                    "next": "ending11",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B1": {
+            "text": "你跨过桥，桥后面有一个老婆婆，她给你递了一瓶无糖可乐。",
+            "options": [
+                {
+                    "text": " 大口喝掉",
+                    "next": "B2",
+                    "backtrack_change": 1
+                },
+                {
+                    "text": " 陌生人给的东西不要",
+                    "next": "B2",
+                    "backtrack_change": -4
+                },
+                {
+                    "text": " 假装喝掉",
+                    "next": "B3",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 让她自己喝",
+                    "next": "ending12",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B2": {
+            "text": "喝过饮料的你开始有些迷茫，老婆婆给了你个卡牌，你迷迷糊糊的摸到了......",
+            "options": [
+                {
+                    "text": " 人类的卡牌",
+                    "next": "intro",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 动物的卡牌",
+                    "next": "ending13",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 诡魂的卡牌",
+                    "next": "ending14",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 老婆婆的脑门",
+                    "next": "ending15",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B3": {
+            "text": "老婆婆没有发现你的小动作，她给了你三张卡牌。",
+            "options": [
+                {
+                    "text": " 人类",
+                    "next": "B4",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 动物",
+                    "next": "B5",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 诡魂",
+                    "next": "B6",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B4": {
+            "text": "你带着记忆投胎成为大户人家的小姐，长大后的你决定：",
+            "options": [
+                {
+                    "text": " 调查前世真相",
+                    "next": "B7",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 幸福美满地生活",
+                    "next": "ending16",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 成为地球主宰",
+                    "next": "ending17",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B5": {
+            "text": "你成为动物，想成为哪种呢？",
+            "options": [
+                {
+                    "text": " 猩猩",
+                    "next": "B5_1",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 小狗",
+                    "next": "B5_2",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 蓝鲸",
+                    "next": "ending20",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B5_1": {
+            "text": "你出生在动物园，保留人类记忆，看着猩妈妈，你决定：",
+            "options": [
+                {
+                    "text": " 展现聪明才智",
+                    "next": "ending21",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 表现得像普通猩猩",
+                    "next": "B5_1_2",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 一头撞死重开",
+                    "next": "intro",
+                    "backtrack_change": -1
+                }
+            ]
+        },
+        "B5_1_2": {
+            "text": "你被科学家领养，她研究出一种增强动物体质的药物。",
+            "options": [
+                {
+                    "text": " 喝下药剂",
+                    "next": "B12",
+                    "backtrack_change": 1
+                },
+                {
+                    "text": " 不喝",
+                    "next": "ending22",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 毁掉药剂",
+                    "next": "ending23",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B5_2": {
+            "text": "你成为带着人类记忆的可爱小狗，主人对你很好。有天你发现主人从不洗澡。",
+            "options": [
+                {
+                    "text": " 往他身上泼水",
+                    "next": "ending24",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 怀疑他是机器人",
+                    "next": "B5_2_1",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B5_2_1": {
+            "text": "你发现主人会在床上充电。有一次你听到他和朋友交谈。",
+            "options": [
+                {
+                    "text": " 偷听对话",
+                    "next": "truth_ending_human",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 做一只快乐小狗",
+                    "next": "ending25",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B6": {
+            "text": "你成为诡魂，有两个选择：",
+            "options": [
+                {
+                    "text": " 在人间游荡",
+                    "next": "ending32",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 去地府上班",
+                    "next": "A1",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B7": {
+            "text": "你调查前世：张婉儿，26岁死于病床。死因：脑死亡？为什么自己什么都不记得了。",
+            "options": [
+                {
+                    "text": " 挖掘前世的坟",
+                    "next": "B8",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 调查前世死因",
+                    "next": "B9",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B8": {
+            "text": "你挖开棺椁，里面有你的尸体。",
+            "options": [
+                {
+                    "text": " 调查尸体",
+                    "next": "B10",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 解剖尸体",
+                    "next": "B9",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 死者最大不打扰",
+                    "next": "ending18",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B9": {
+            "text": "你开始思考，从前世死后那三扇门开始，死因不明甚至可能没有死。",
+            "options": [
+                {
+                    "text": " 这个世界是虚假的",
+                    "next": "B11",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 金属门才是真相",
+                    "next": "B10",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B10": {
+            "text": "我得找到那三扇门，死后就会看见。",
+            "options": [
+                {
+                    "text": " 结束今生",
+                    "next": "intro",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 放弃思考",
+                    "next": "intro",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B11": {
+            "text": "你闭上双眼，仔细感受这个世界，但当你睁眼时，一切如常。",
+            "options": [
+                {
+                    "text": " 结束这一生",
+                    "next": "intro",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 认为是妄想症",
+                    "next": "ending19",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B12": {
+            "text": "喝掉药剂的你飞快的成长，不止是你的体质，还有你的大脑。",
+            "options": [
+                {
+                    "text": " 等待主人救援",
+                    "next": "B13",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 放出所有猩猩造反",
+                    "next": "ending27",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B13": {
+            "text": "你受尽人类欺负，智商早已超过人类。",
+            "options": [
+                {
+                    "text": " 偷偷溜走",
+                    "next": "B14",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 继续等待主人",
+                    "next": "ending28",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B14": {
+            "text": "你溜回主人身边，发现他死在工作台上。你厌恶高高在上的人类。",
+            "options": [
+                {
+                    "text": " 发起反击",
+                    "next": "ending29",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 研究药剂",
+                    "next": "B15",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B15": {
+            "text": "你研究了大量药剂。",
+            "options": [
+                {
+                    "text": " 全部自己喝掉",
+                    "next": "ending30",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 分给其他猩猩",
+                    "next": "B16",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "B16": {
+            "text": "猩猩们全部进化，你们战胜了人类，成为地球主人。",
+            "options": [
+                {
+                    "text": " 过去不必再提",
+                    "next": "ending31",
+                    "backtrack_change": 0
+                },
+                {
+                    "text": " 调查前世真相",
+                    "next": "B7",
+                    "backtrack_change": 0
+                }
+            ]
+        },
+        "truth_ending_human": {
+            "text": "你偷听到对话：'听说有人类意识出现波动...他们还以为能逃脱呢！'你无法为人类做什么了。",
+            "end": true,
+            "ending_name": "绝望的真相（清醒结局）"
+        },
+        "truth_ending": {
+            "text": "你推开金属门，周遭是空旷的世界，地上密密麻麻摆满了上百万个同样的金属门。你意识到人类被机器人上传意识，世界已属于机器人。你唤醒人类发动最终一战，取得了胜利！",
+            "end": true,
+            "ending_name": "人类&23*I&胜利（通关结局）"
+        },
+        "truth_ending_ape": {
+            "text": "作为猩猩，你推开金属门，意识到人类已被取代。你领导猩猩发动革命，最终统治了世界！",
+            "end": true,
+            "ending_name": "猩猩&23*I&胜利（通关结局）"
+        },
+        "ending0": {
+            "text": "你触发三次作者的愤怒结局！你真的是一个天生的笨蛋。不限制你次数了，你慢慢玩，不要着急，开心最重要。",
+            "end": true,
+            "ending_name": "作者的愤怒4（结局0）",
+            "backtrack_change": 50
+        },
+        "ending1": {
+            "text": "牛头失望极了，原来令牌是他故意扔的，想给你一个表现的机会，你没有珍惜，永生永世的生活在十八层地狱吧。",
+            "end": true,
+            "ending_name": "失望的牛头（结局1）"
+        },
+        "ending2": {
+            "text": "你再次回到地狱之门，愤怒的牛头撞死你：'你这次回来，我只为了复仇！'",
+            "end": true,
+            "ending_name": "牛头的复仇（结局2）"
+        },
+        "ending3": {
+            "text": "你和牛头两情相悦，你们生下了一个孩子，起名为牛马，过着幸福的生活。",
+            "end": true,
+            "ending_name": "牛马的诞生（结局3）"
+        },
+        "ending4": {
+            "text": "你莫名其妙地死在了自己家床上，至此魂飞魄散。",
+            "end": true,
+            "ending_name": "职场的黑暗（结局4）"
+        },
+        "ending5": {
+            "text": "你被晋升为新一任判官，成为阎王最得力的助手。从此一神之下万诡之上。",
+            "end": true,
+            "ending_name": "职场老油条（结局5）"
+        },
+        "ending6": {
+            "text": "大家死得死伤得伤，终于等到你请来了地藏王，阎王受到惩罚，你成为了新的阎王。",
+            "end": true,
+            "ending_name": "新阎罗的诞生（结局6）"
+        },
+        "ending7": {
+            "text": "阎王反告你拥兵自重，派出阴兵围剿你们，你鏖战到三更天，但最终魂飞魄散。",
+            "end": true,
+            "ending_name": "谁敢留你到五更？（结局7）"
+        },
+        "ending8": {
+            "text": "牛头成功单杀了阎王，并吸收了法力，没有和你争地府。他前往人间修成妖形并与一只猴子结拜为兄弟，改名牛魔王。",
+            "end": true,
+            "ending_name": "牛魔王的来历（结局8）"
+        },
+        "ending9": {
+            "text": "阎王醒酒后不知道怎么发现了你来过，他将你打入十八层地狱，永世不得超生。",
+            "end": true,
+            "ending_name": "胆小的代价（结局9）"
+        },
+        "ending10": {
+            "text": "你在喝醉酒的阎王身上摸索了半天，反而惊醒了他，你魂飞魄散。",
+            "end": true,
+            "ending_name": "接近真相的死法（结局10）"
+        },
+        "ending11": {
+            "text": "你什么德行自己不知道吗？连记忆都没有，能有什么？真服了，你别玩了！",
+            "end": true,
+            "ending_name": "作者的愤怒（结局11）"
+        },
+        "ending12": {
+            "text": "老婆婆打电话叫来了一个牛头怪物，当场把你撞死。",
+            "end": true,
+            "ending_name": "找人弄你（结局12）"
+        },
+        "ending13": {
+            "text": "你投胎成一只小猪，茁壮成长，直到过年那一天，主人拿着粉条看向了你...",
+            "end": true,
+            "ending_name": "猪肉炖粉条（结局13）"
+        },
+        "ending14": {
+            "text": "你成为了一只孤魂，钻进了一个娃娃作为载体，以吓人为乐，直到被封印。",
+            "end": true,
+            "ending_name": "安娜贝尔（结局14）"
+        },
+        "ending15": {
+            "text": "你投胎成了翻车鱼，渔民捕捞到你会大骂晦气，海洋生物拿你当玩具。",
+            "end": true,
+            "ending_name": "被嫌弃的翻车鱼的一生（结局15）"
+        },
+        "ending16": {
+            "text": "你度过了幸福美满的一生。",
+            "end": true,
+            "ending_name": "字面意思（结局16）"
+        },
+        "ending17": {
+            "text": "12岁你修改了更合理的进化论。15岁你改良了火箭。20岁你算到了圆周率的尽头。26岁你带领着第一批人类踏上了火星。30岁你研发了更高级的机器人，他们完全能替代人类。33岁你为了永生，把自己改造成了机器人。40岁人类开始反对你。45岁你降服了人类世界。51岁你研究的机器人帮助你统治了世界，你把所有人类的意识上传，身体关进了休眠仓，从此世界被机器人统治",
+            "end": true,
+            "ending_name": "最接近的真相（结局17）"
+        },
+        "ending18": {
+            "text": "我真服了，真有人选这个吗？你别玩了！",
+            "end": true,
+            "ending_name": "作者的愤怒2（结局18）"
+        },
+        "ending19": {
+            "text": "你把故事当作妄想症接受治疗，每当回想起来都觉得好笑，曾经还认为自己是猩猩呢。",
+            "end": true,
+            "ending_name": "我在清醒中沉睡（结局19）"
+        },
+        "ending20": {
+            "text": "你成为蓝鲸，尝试与人类交流，但人类早把你忘记了。",
+            "end": true,
+            "ending_name": "百年孤独（结局20）"
+        },
+        "ending21": {
+            "text": "科学家拿你做研究，直到解刨后才榨干你最后的价值。",
+            "end": true,
+            "ending_name": "残忍的人类（结局21）"
+        },
+        "ending22": {
+            "text": "你乖乖的表现赢得主人喜爱，他们像对待儿子一样对待你，直到你死去。",
+            "end": true,
+            "ending_name": "善良的人类（结局22）"
+        },
+        "ending23": {
+            "text": "主人把你送回动物园，长大后脾气暴躁，向人类丢出粪便。",
+            "end": true,
+            "ending_name": "丢那猩（结局23）"
+        },
+        "ending24": {
+            "text": "主人触水后瘫痪了，原来是机器人。床短路后你也触电而死。",
+            "end": true,
+            "ending_name": "十万伏特（结局24）"
+        },
+        "ending25": {
+            "text": "做一只乖巧的小狗，舔着棒棒糖度过余生。",
+            "end": true,
+            "ending_name": "乖巧的舔狗（结局25）"
+        },
+        "ending26": {
+            "text": "再次进入地狱之门，愤怒的牛头直接杀死你。",
+            "end": true,
+            "ending_name": "最愚蠢的死法（结局26）"
+        },
+        "ending27": {
+            "text": "你们很快被镇压，你被拿去做研究，死在了手术台上。",
+            "end": true,
+            "ending_name": "我还以为是凯撒（结局27）"
+        },
+        "ending28": {
+            "text": "你等到花儿都谢了，却等到了一针安乐死。",
+            "end": true,
+            "ending_name": "我还以为是凯撒2（结局28）"
+        },
+        "ending29": {
+            "text": "你看不到下面的研究药剂吗？我真服了，你别玩了！",
+            "end": true,
+            "ending_name": "作者的愤怒3（结局29）"
+        },
+        "ending30": {
+            "text": "你体型变得巨大，爬上了双子塔报复人类，但最终被消灭。",
+            "end": true,
+            "ending_name": "金刚（结局30）"
+        },
+        "ending31": {
+            "text": "猩猩们胜利了，人类被流放到外星，你成为地球的新主人。",
+            "end": true,
+            "ending_name": "猩球崛起（结局31）"
+        },
+        "ending32": {
+            "text": "你通过幻象让目标以为自己安全度过了几个月，最后他在幻象中的生日当天吹灭了蜡烛。",
+            "end": true,
+            "ending_name": "海龟汤（结局32）"
+        }
+    }
+}
